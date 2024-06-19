@@ -1,0 +1,182 @@
+[
+  {
+    "id": 3876,
+    "name": "Paracetamol 500mg",
+    "img": "https://thuocgiaphuc.vn/Uploads/ImgSP/Full12-Paracetamol500mgTh%C3%A0nhNam.jpg",
+    "company": "HealthCare Pharmaceuticals Ltd.",
+    "category": "Tablet",
+    "generic": "Paracetamol",
+    "safetyAdvice": [
+      {"status": "UNSAFE", "advice": "It is unsafe to consume alcohol with Paracetamol."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Paracetamol is safe to use during pregnancy. Most studies have shown low or no risk to the developing baby."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Paracetamol is safe to use during breastfeeding. Human studies suggest that the drug does not pass into the breastmilk in a significant amount and is not harmful to the baby."},
+      {"status": "SAFE", "advice": "Paracetamol does not usually affect your ability to drive."},
+      {"status": "CAUTION", "advice": "Paracetamol should be used with caution in patients with kidney disease. Dose adjustment of Paracetamol may be needed. Please consult your doctor. However, Paracetamol is considered the safest painkiller for kidney disease patients."},
+      {"status": "CAUTION", "advice": "Paracetamol should be used with caution in patients with liver disease. Dose adjustment of Paracetamol may be needed. Please consult your doctor. However, the use of Paracetamol is not recommended in patients with severe liver disease and active liver disease."}
+    ],
+    "price": 3.99,
+    "isRegistered": true
+  },
+  {
+    "id": 9283,
+    "name": "Ibuprofen 400mg",
+    "img": "https://5.imimg.com/data5/SELLER/Default/2023/9/344827499/TG/YT/FY/192270567/ibuprofen-tablet-400mg.png",
+    "company": "Medico Pharma",
+    "category": "Tablet",
+    "generic": "Ibuprofen",
+    "safetyAdvice": [
+      {"status": "UNSAFE", "advice": "It is unsafe to consume alcohol with Ibuprofen."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Ibuprofen is safe to use during pregnancy only if prescribed. Consult your doctor."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Ibuprofen is safe to use during breastfeeding. Consult your doctor."},
+      {"status": "SAFE", "advice": "Ibuprofen does not usually affect your ability to drive."},
+      {"status": "CAUTION", "advice": "Ibuprofen should be used with caution in patients with kidney disease. Dose adjustment of Ibuprofen may be needed. Please consult your doctor."},
+      {"status": "CAUTION", "advice": "Ibuprofen should be used with caution in patients with liver disease. Dose adjustment of Ibuprofen may be needed. Please consult your doctor."}
+    ],
+    "price": 4.99,
+    "isRegistered": true
+  },
+  {
+    "id": 5647,
+    "name": "Amoxicillin 250mg",
+    "img": "https://5.imimg.com/data5/SELLER/Default/2022/3/QG/BF/QB/83711588/amoxicillin-250mg-capsule-500x500.jpg",
+    "company": "Global Pharmaceuticals",
+    "category": "Capsule",
+    "generic": "Amoxicillin",
+    "safetyAdvice": [
+      {"status": "SAFE IF PRESCRIBED", "advice": "Amoxicillin is safe to use during pregnancy. Consult your doctor."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Amoxicillin is safe to use during breastfeeding. Human studies suggest that the drug does not pass into the breastmilk in a significant amount and is not harmful to the baby."},
+      {"status": "SAFE", "advice": "Amoxicillin does not usually affect your ability to drive."},
+      {"status": "CAUTION", "advice": "Complete the full course as prescribed. Inform your doctor if you have a history of allergic reactions to penicillins."}
+    ],
+    "price": 8.50,
+    "isRegistered": true
+  },
+  {
+    "id": 1764,
+    "name": "Cetirizine 10mg",
+    "img": "https://www.albionbd.com/wp-content/uploads/2021/08/Cetirizine-Tablet.jpg",
+    "company": "AllerGen Inc.",
+    "category": "Tablet",
+    "generic": "Cetirizine",
+    "safetyAdvice": [
+      {"status": "UNSAFE", "advice": "It is unsafe to consume alcohol with Cetirizine."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Cetirizine is safe to use during pregnancy. Consult your doctor."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Cetirizine is safe to use during breastfeeding. Consult your doctor."},
+      {"status": "CAUTION", "advice": "May cause drowsiness. Avoid driving or operating machinery until you know how this medication affects you."}
+    ],
+    "price": 2.75,
+    "isRegistered": true
+  },
+  {
+    "id": 3421,
+    "name": "Metformin 500mg",
+    "img": "https://th.bing.com/th/id/OIP.4JuuA4oFVW1Waky6YNY0cwHaHT?rs=1&pid=ImgDetMain",
+    "company": "Diabetes Care Co.",
+    "category": "Tablet",
+    "generic": "Metformin",
+    "safetyAdvice": [
+      {"status": "SAFE IF PRESCRIBED", "advice": "Metformin is safe to use during pregnancy. Consult your doctor."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Metformin is safe to use during breastfeeding. Consult your doctor."},
+      {"status": "SAFE", "advice": "Metformin does not usually affect your ability to drive."},
+      {"status": "CAUTION", "advice": "Monitor blood sugar levels regularly. Take with meals to reduce gastrointestinal discomfort."}
+    ],
+    "price": 6.99,
+    "isRegistered": true
+  },
+  {
+    "id": 7892,
+    "name": "Omeprazole 20mg",
+    "img": "https://th.bing.com/th/id/R.d0aeb610403970ff9ad54bc63e8a69d6?rik=L7eVcXSA5EogOA&pid=ImgRaw&r=0",
+    "company": "GastroHealth Ltd.",
+    "category": "Tablet",
+    "generic": "Omeprazole",
+    "safetyAdvice": [
+      {"status": "SAFE IF PRESCRIBED", "advice": "Omeprazole is safe to use during pregnancy. Consult your doctor."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Omeprazole is safe to use during breastfeeding. Consult your doctor."},
+      {"status": "SAFE", "advice": "Omeprazole does not usually affect your ability to drive."},
+      {"status": "CAUTION", "advice": "Take at least 30 minutes before a meal. Consult your doctor if you need to take it for more than 14 days."}
+    ],
+    "price": 5.50,
+    "isRegistered": true
+  },
+  {
+    "id": 1324,
+    "name": "Azithromycin 250mg",
+    "img": "https://5.imimg.com/data5/SELLER/Default/2022/3/QG/BF/QB/83711588/amoxicillin-250mg-capsule-500x500.jpg",
+    "company": "Global Pharma",
+    "category": "Capsule",
+    "generic": "Azithromycin",
+    "safetyAdvice": [
+      {"status": "SAFE IF PRESCRIBED", "advice": "Azithromycin is safe to use during pregnancy. Consult your doctor."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Azithromycin is safe to use during breastfeeding. Consult your doctor."},
+      {"status": "SAFE", "advice": "Azithromycin does not usually affect your ability to drive."},
+      {"status": "CAUTION", "advice": "Complete the full course as prescribed. Consult your doctor if you have any allergic reactions to antibiotics."}
+    ],
+    "price": 9.99,
+    "isRegistered": true
+  },
+  {
+    "id": 2345,
+    "name": "Salbutamol Inhaler",
+    "img": "https://5.imimg.com/data5/SELLER/Default/2022/3/QG/BF/QB/83711588/amoxicillin-250mg-capsule-500x500.jpg",
+    "company": "RespiraCare Ltd.",
+    "category": "Inhaler",
+    "generic": "Salbutamol",
+    "safetyAdvice": [
+      {"status": "SAFE IF PRESCRIBED", "advice": "Salbutamol is safe to use during pregnancy. Consult your doctor."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Salbutamol is safe to use during breastfeeding. Consult your doctor."},
+      {"status": "SAFE", "advice": "Salbutamol does not usually affect your ability to drive."},
+      {"status": "CAUTION", "advice": "Follow your doctor's instructions on usage. Inform your doctor if you experience any side effects."}
+    ],
+    "price": 15.00,
+    "isRegistered": true
+  },
+  {
+    "id": 3678,
+    "name": "Hydrocortisone Cream",
+    "img": "https://5.imimg.com/data5/SELLER/Default/2022/3/QG/BF/QB/83711588/amoxicillin-250mg-capsule-500x500.jpg",
+    "company": "DermCare Ltd.",
+    "category": "Cream",
+    "generic": "Hydrocortisone",
+    "safetyAdvice": [
+      {"status": "SAFE IF PRESCRIBED", "advice": "Hydrocortisone is safe to use during pregnancy. Consult your doctor."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Hydrocortisone is safe to use during breastfeeding. Consult your doctor."},
+      {"status": "SAFE", "advice": "Hydrocortisone does not usually affect your ability to drive."},
+      {"status": "CAUTION", "advice": "Use as directed by your doctor. Do not apply to broken or infected skin."}
+    ],
+    "price": 7.50,
+    "isRegistered": true
+  },
+  {
+    "id": 8901,
+    "name": "Dextromethorphan Syrup",
+    "img": "https://5.imimg.com/data5/SELLER/Default/2022/3/QG/BF/QB/83711588/amoxicillin-250mg-capsule-500x500.jpg",
+    "company": "CoughRelief Pharma",
+    "category": "Syrup",
+    "generic": "Dextromethorphan",
+    "safetyAdvice": [
+      {"status": "SAFE IF PRESCRIBED", "advice": "Dextromethorphan is safe to use during pregnancy. Consult your doctor."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Dextromethorphan is safe to use during breastfeeding. Consult your doctor."},
+      {"status": "SAFE", "advice": "Dextromethorphan does not usually affect your ability to drive."},
+      {"status": "CAUTION", "advice": "Follow your doctor's instructions on dosage. Do not exceed the recommended dose."}
+    ],
+    "price": 4.75,
+    "isRegistered": true
+  },
+  {
+    "id": 4521,
+    "name": "Vitamin D Injection",
+    "img": "https://5.imimg.com/data5/SELLER/Default/2022/3/QG/BF/QB/83711588/amoxicillin-250mg-capsule-500x500.jpg",
+    "company": "VitaHealth Corp.",
+    "category": "Injection",
+    "generic": "Cholecalciferol",
+    "safetyAdvice": [
+      {"status": "SAFE IF PRESCRIBED", "advice": "Vitamin D is safe to use during pregnancy. Consult your doctor."},
+      {"status": "SAFE IF PRESCRIBED", "advice": "Vitamin D is safe to use during breastfeeding. Consult your doctor."},
+      {"status": "SAFE", "advice": "Vitamin D does not usually affect your ability to drive."},
+      {"status": "CAUTION", "advice": "Follow your doctor's instructions on dosage. Monitor your blood levels as advised."}
+    ],
+    "price": 12.00,
+    "isRegistered": true
+  }
+]
