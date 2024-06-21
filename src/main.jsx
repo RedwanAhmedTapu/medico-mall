@@ -20,6 +20,11 @@ import CategoryManagement from './pages/admin/CategoryManagement.jsx'
 import PaymentManagement from './pages/admin/PaymentManagement.jsx'
 import SalesReport from './pages/admin/SalesReport.jsx'
 import BannerManagement from './pages/admin/BannerManagement.jsx'
+import SellerLayout from './pages/SellerLayout.jsx'
+import SellerHomePage from './pages/seller/SellerHomePage.jsx'
+import ManageMedicines from './pages/seller/ManageMedicine.jsx'
+import PaymentHistory from './pages/seller/PaymentHistory.jsx'
+import AskForAdvertisement from './pages/seller/AskForAddvertisement.jsx'
 
 const router = createBrowserRouter([
   {
@@ -96,6 +101,32 @@ const router = createBrowserRouter([
       {
         path: 'banners',
         element: <BannerManagement />
+      }
+    ]
+  },
+  {
+    path: '/seller',
+    element: (
+      
+        <SellerLayout />
+      
+    ),
+    children: [
+      {
+        path: '',
+        element: <SellerHomePage />
+      },
+      {
+        path: 'medicines',
+        element: <ManageMedicines />
+      },
+      {
+        path: 'payments',
+        element: <PaymentHistory />
+      },
+      {
+        path: 'advertisements',
+        element: <AskForAdvertisement />
       }
     ]
   }
