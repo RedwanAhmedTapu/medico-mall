@@ -9,9 +9,8 @@ import {
 } from 'firebase/auth';
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from "react";
-import auth from '../firebase/firebase.config';
-import axios from 'axios';
-
+import {auth,db} from '../firebase/firebase.config';
+import axiosInstance from './api/axiosInstance';
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
@@ -41,7 +40,7 @@ const AuthProvider = ({ children }) => {
   // set cart items
   useEffect(()=>{
     if(user){
-      axios.get(`https://medico-mall-server.vercel.app/users?email=${user.email}`)
+      axiosInstance.get(`/users?email=${user.email}`)
       .then(res=>res.data)
       .then(user=>setCartItems(user.cartItems))
     }
@@ -49,7 +48,7 @@ const AuthProvider = ({ children }) => {
 
   //get all medicines data
   useEffect(() => {
-    axios.get('https://medico-mall-server.vercel.app/medicines')
+    axiosInstance.get('/medicines')
       .then(response => response.data)
       .then(data => {
         console.log("Number of medicines from db: ", data.length);
@@ -60,10 +59,10 @@ const AuthProvider = ({ children }) => {
 
   // get categories
   useEffect(() => {
-    axios.get('https://medico-mall-server.vercel.app/categories')
+    axiosInstance.get('/categories')
       .then(response => response.data)
       .then(data => {
-        console.log(data)
+        console.log(data,"")
         setCategories(data)
       })
       .catch(error => console.error('Error fetching categories:', error)); // Optional: Handle errors

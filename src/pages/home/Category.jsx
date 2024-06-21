@@ -6,6 +6,7 @@ import { AuthContext } from "../../AuthProvider";
 
 const Category = () => {
   const { categories, medicines } = useContext(AuthContext);
+  console.log(medicines,"cat")
   return (
     <div className="px-5 py-10 text-center">
       <h2 className="text-3xl font-bold mb-5 md:mb-10">Categories {categories && categories.length}</h2>
@@ -19,7 +20,7 @@ const Category = () => {
               <p className="text-left">Available medicine: {(medicines && (medicines.filter(medicine => medicine.category === category.name)).length)}</p>
               {/* <p className="text-left">Available medicine: {medicines.length}</p> */}
               <div className="card-actions justify-end">
-                <Link to={`/category/${category.name.toLowerCase()}`} className="btn btn-primary btn-info">See all</Link>
+                <Link to={`/category/${category.name && category.name.toLowerCase()}`} className="btn btn-primary btn-info">See all</Link>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 import Modal from 'react-modal';
+import axiosInstance from "../../api/axiosInstance";
+
 
 const AskForAdvertisement = () => {
   const [advertisements, setAdvertisements] = useState([]);
@@ -15,7 +16,7 @@ const AskForAdvertisement = () => {
 
   const fetchAdvertisements = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/seller/advertisements');
+      const response = await axiosInstance.get('/seller/advertisements');
       setAdvertisements(response.data);
     } catch (error) {
       console.error('Failed to fetch advertisements:', error);
@@ -29,7 +30,7 @@ const AskForAdvertisement = () => {
         image,
         description,
       };
-      const response = await axios.post('http://localhost:8080/seller/advertisements', newAdvertisement);
+      const response = await axiosInstance.post('/seller/advertisements', newAdvertisement);
       if (response.status === 201) {
         fetchAdvertisements(); // Refresh advertisements list
         clearFormFields();

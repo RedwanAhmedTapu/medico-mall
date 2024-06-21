@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
 import { LuEye } from "react-icons/lu";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../api/axiosInstance";
 import Swal from "sweetalert2";
 
 const Shop = () => {
   const { user, medicines, setCartItems, cartItems, setLoading, loading } = useContext(AuthContext);
-  console.log(medicines);
+  console.log(medicines,"medi");
   const navigate = useNavigate();
 
   // add item to cart
@@ -23,7 +23,7 @@ const Shop = () => {
       return;
     }
     setLoading(true);
-    axios.patch(`https://medico-mall-server.vercel.app/user/${user.email}`, { medicine, operation: "add" })
+    axiosInstance.patch(`/user/${user.email}`, { medicine, operation: "add" })
       .then(res => res.data)
       .then(data => {
         console.log(data)
@@ -118,7 +118,7 @@ const Shop = () => {
                           <h4 className="text-xl font-bold text-blue-700 mb-2">Safety Advice</h4>
                           <ul className="list-disc list-inside text-gray-600">
                             {
-                              medicine.safetyAdvice.map((safetyAdv, index) =>
+                              medicine.safetyAdvice?.map((safetyAdv, index) =>
                                 <li key={index} className="list-none">
                                   <div className="py-3">
                                     <h1 className="font-bold text-lg">{safetyAdv.status}</h1>

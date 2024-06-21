@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import  { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import axiosInstance from "../../api/axiosInstance";
+
 import 'react-toastify/dist/ReactToastify.css';
 
 const UsersManagement = () => {
@@ -10,7 +11,7 @@ const UsersManagement = () => {
     // Fetch users from the backend
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/admin/users'); // Update with the correct endpoint
+        const response = await axiosInstance.get('/admin/users'); // Update with the correct endpoint
         console.log(response,"admin")
         if (Array.isArray(response.data)) {
           setUsers(response.data);
@@ -28,12 +29,12 @@ const UsersManagement = () => {
   const handleRoleChange = async (id, newRole) => {
     try {
       const endpointMap = {
-        seller: `http://localhost:8080/admin/users/${id}/make-seller`,
-        admin: `http://localhost:8080/admin/users/${id}/make-admin`,
-        user: `http://localhost:8080/admin/users/${id}/downgrade`,
+        seller: `/admin/users/${id}/make-seller`,
+        admin: `/admin/users/${id}/make-admin`,
+        user: `/admin/users/${id}/downgrade`,
       };
 
-      const response = await axios.put(endpointMap[newRole]);
+      const response = await axiosInstance.put(endpointMap[newRole]);
 
       if (response.status === 200) {
         const updatedUsers = users.map(user =>

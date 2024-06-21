@@ -3,6 +3,7 @@ import { AuthContext } from "../AuthProvider";
 import axios from "axios";
 import { TiDelete } from "react-icons/ti";
 import Swal from "sweetalert2";
+import axiosInstance from "../api/axiosInstance";
 
 const Cart = () => {
   const { cartItems, setCartItems, user, loading, setLoading } = useContext(AuthContext);
@@ -10,7 +11,7 @@ const Cart = () => {
   // Fetching data
   useEffect(() => {
     if (user) {
-      axios.get(`https://medico-mall-server.vercel.app/users?email=${user.email}`)
+      axiosInstance.get(`/users?email=${user.email}`)
         .then(res => res.data)
         .then(user => setCartItems(user.cartItems));
     }
@@ -29,7 +30,7 @@ const Cart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         setLoading(true);
-        axios.patch(`https://medico-mall-server.vercel.app/user/${user.email}`, { _id, operation: "remove" })
+        axiosInstance.patch(`/user/${user.email}`, { _id, operation: "remove" })
           .then(res => res.data)
           .then(data => {
             console.log(data);

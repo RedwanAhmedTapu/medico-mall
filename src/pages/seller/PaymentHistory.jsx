@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axiosInstance from "../../api/axiosInstance";
 
 const PaymentHistory = () => {
   const [payments, setPayments] = useState([]);
@@ -10,7 +10,7 @@ const PaymentHistory = () => {
 
   const fetchPayments = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/seller/payments');
+      const response = await axiosInstance.get('/seller/payments');
       setPayments(response.data);
     } catch (error) {
       console.error('Failed to fetch payments:', error);

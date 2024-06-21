@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useContext } from "react";
+import axiosInstance from "../api/axiosInstance";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
@@ -30,11 +30,11 @@ const Register = () => {
         //upload user data to userDB
         console.log(currentUser);
         const updatedUser = { ...currentUser, username, displayName: username, photoURL, role, password, cartItems: []};
-        axios.post('https://medico-mall-server.vercel.app/users', updatedUser)
+        axiosInstance.post('/users', updatedUser)
           .then(res => res.data)
           .then(data => {
             console.log(data)
-            axios.get(`https://medico-mall-server.vercel.app/users?email=${email}`)
+            axiosInstance.get(`/users?email=${email}`)
               .then(res => res.data)
               .then(data => {
                 localStorage.setItem('user', JSON.stringify(data));

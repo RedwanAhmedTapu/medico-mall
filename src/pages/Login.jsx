@@ -1,137 +1,70 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../AuthProvider";
 import Swal from "sweetalert2";
-import axios from "axios";
+import { AuthContext } from "../AuthProvider";
 
 const Login = () => {
-  const { setUser, signInUser, signInGoogle, signInGitHub, setCartItems } = useContext(AuthContext);
+  const { signInUser, signInGoogle, signInGitHub } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleSignIn = (event) => {
+  const handleSignIn = async (event) => {
     event.preventDefault();
-    const form = event.target;
-    const email = form.email.value.toLowerCase();
-    const password = form.password.value;
+    const { email, password } = event.target.elements;
 
-    signInUser(email, password)
-      .then(userCredential => userCredential.user)
-      .then(user => {
-        axios.get(`https://medico-mall-server.vercel.app/users?email=${email}`)
-          .then(res => res.data)
-          .then(data => {
-            // show success alert
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Successfully Logged in as " + user.email,
-              showConfirmButton: false,
-              timer: 1500
-              });
-              // save data into local storage
-              localStorage.setItem('user', JSON.stringify(data));
-              setUser(JSON.parse(localStorage.getItem('user')));
-              setCartItems(data.cartItems)
-              // navigate to home page
-              navigate('/');
-          })
-          .catch(err => console.log(err.message));
-      })
-      .catch(err => {
-        Swal.fire({
-          position: "center center",
-          icon: "error",
-          title: err.message,
-          showConfirmButton: false,
-          timer: 1500
-        });
+    try {
+      await signInUser(email.value, password.value);
+      navigateUser();
+    } catch (error) {
+      Swal.fire({
+        position: "center center",
+        icon: "error",
+        title: error.message,
+        showConfirmButton: false,
+        timer: 1500
       });
-  }
+    }
+  };
 
-  const handleGoogleSignIn = () => {
-    signInGoogle()
-      .then(userCredential => userCredential.user)
-      .then(user => {
-        axios.get(`https://medico-mall-server.vercel.app/users/${user.email}`)
-          .then(response => {
-            if (response.data.email) {
-              setUser(response.data);
-              // localStorage.setItem('user', JSON.stringify(response.data));
-              navigate('/');
-            } else {
-              axios.post('https://medico-mall-server.vercel.app/users', user)
-                .then(res => res.data)
-                .then(data => {
-                  setUser(data);
-                  // localStorage.setItem('user', JSON.stringify(data));
-                  navigate('/');
-                })
-                .catch(err => console.log(err.message));
-            }
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Successfully Logged in as " + user.email,
-              showConfirmButton: false,
-              timer: 1500
-            });
-          })
-          .catch(err => console.log(err.message));
-      })
-      .catch(error => {
-        Swal.fire({
-          position: "center-center",
-          icon: "error",
-          title: error.message,
-          showConfirmButton: false,
-          timer: 1500
-        });
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInGoogle();
+      navigateUser();
+    } catch (error) {
+      Swal.fire({
+        position: "center-center",
+        icon: "error",
+        title: error.message,
+        showConfirmButton: false,
+        timer: 1500
       });
-  }
+    }
+  };
 
-  const handleGithubSignIn = () => {
-    signInGitHub()
-      .then(userCredential => userCredential.user)
-      .then(user => {
-        axios.get(`https://medico-mall-server.vercel.app/users/${user.email}`)
-          .then(response => {
-            if (response.data) {
-              Swal.fire({
-                icon: "error",
-                title: "Existence Error",
-                text: "A user with the email already exist. Try a different one.",
-                footer: '<p>Ready to Explore?</p>'
-              });
-            } else {
-              axios.post('https://medico-mall-server.vercel.app/users', user)
-                .then(res => res.data)
-                .then(data => {
-                  setUser(data);
-                  localStorage.setItem('user', JSON.stringify(data));
-                  navigate('/');
-                })
-                .catch(err => console.log(err.message));
-            }
-          })
-          .catch(err => console.log(err.message));
-        Swal.fire({
-          position: "center-center",
-          icon: "success",
-          title: "Successfully Logged in as " + user.email,
-          showConfirmButton: false,
-          timer: 1500
-        });
-      })
-      .catch(error => {
-        Swal.fire({
-          position: "center-center",
-          icon: "error",
-          title: error.message,
-          showConfirmButton: false,
-          timer: 1500
-        });
+  const handleGithubSignIn = async () => {
+    try {
+      await signInGitHub();
+      navigateUser();
+    } catch (error) {
+      Swal.fire({
+        position: "center-center",
+        icon: "error",
+        title: error.message,
+        showConfirmButton: false,
+        timer: 1500
       });
-  }
+    }
+  };
+
+  const navigateUser = () => {
+    const userEmail = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).reloadUserInfo.email : null; // Assuming you store user role in localStorage after authentication
+    if (userEmail === "admin@gmail.com") {
+      navigate("/admin");
+    } else if (userEmail === "seller@gmail.com") {
+      navigate("/seller");
+    } else {
+      navigate("/");
+    }
+  };
 
   return (
     <div>

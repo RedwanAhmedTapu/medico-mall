@@ -1,7 +1,8 @@
 // src/components/CategoryManagement.js
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import axiosInstance from "../../api/axiosInstance";
+
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,7 +16,7 @@ const CategoryManagement = () => {
     // Fetch categories from the backend
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/admin/categories');
+        const response = await axiosInstance.get('/admin/categories');
         setCategories(response.data);
       } catch (error) {
         toast.error('Failed to fetch categories');

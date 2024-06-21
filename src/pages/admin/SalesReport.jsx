@@ -1,7 +1,8 @@
 // src/pages/admin/SalesReport.js
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import  { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import axiosInstance from "../../api/axiosInstance";
+
 import 'react-toastify/dist/ReactToastify.css';
 
 const SalesReport = () => {
@@ -11,7 +12,7 @@ const SalesReport = () => {
     // Fetch sales data from backend
     const fetchSales = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/admin/sales');
+        const response = await axiosInstance.get('/admin/sales');
         setSales(response.data);
       } catch (error) {
         toast.error('Failed to fetch sales');
@@ -23,7 +24,7 @@ const SalesReport = () => {
 
   const handleExport = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/admin/sales/download', {
+      const response = await axiosInstance.get('/admin/sales/download', {
         responseType: 'blob', // Important for downloading files
       });
 

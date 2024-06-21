@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import  { useState, useEffect } from "react";
 import Modal from 'react-modal';
+import axiosInstance from "../../api/axiosInstance";
+
 
 const ManageMedicines = () => {
   const [medicines, setMedicines] = useState([]);
@@ -31,7 +32,7 @@ const ManageMedicines = () => {
 
   const fetchMedicines = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/seller/medicines');
+      const response = await axiosInstance.get('/seller/medicines');
       setMedicines(response.data);
     } catch (error) {
       console.error('Failed to fetch medicines:', error);
@@ -52,7 +53,7 @@ const ManageMedicines = () => {
         perUnitPrice,
         discountPercentage
       };
-      const response = await axios.post('http://localhost:8080/seller/medicines', newMedicine);
+      const response = await axiosInstance.post('/seller/medicines', newMedicine);
       if (response.status === 201) {
         fetchMedicines(); // Refresh medicines list
         clearFormFields();

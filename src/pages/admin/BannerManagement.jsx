@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
-
+import  { useState, useEffect } from "react";
+import axiosInstance from "../../api/axiosInstance";
 const BannerManagement = () => {
   const [banners, setBanners] = useState([]);
 
@@ -8,7 +7,7 @@ const BannerManagement = () => {
     // Fetch banners from the backend
     const fetchBanners = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/admin/banners');
+        const response = await axiosInstance.get('/admin/banners');
         setBanners(response.data);
       } catch (error) {
         console.error('Failed to fetch banners:', error);

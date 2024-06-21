@@ -1,7 +1,7 @@
 // src/api/axios.js
 import axios from 'axios';
 
-const API_URL = 'https://medico-mall-server.vercel.app'; // Replace with your backend URL
+const API_URL = 'http://localhost:8080'; // Replace with your backend URL
 
 const axiosInstance = axios.create({
   baseURL: API_URL,
